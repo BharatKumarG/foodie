@@ -1,0 +1,22 @@
+name: Reinstall Dependencies
+
+on:
+  workflow_dispatch:  # Allows manual trigger
+
+jobs:
+  reinstall-dependencies:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Remove Node Modules and Lock File
+        run: |
+          rm -rf node_modules package-lock.json
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Verify Installation
+        run: npm list
