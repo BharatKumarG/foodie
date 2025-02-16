@@ -33,3 +33,4 @@
     "gh-pages": "^5.0.0"
   }
 }
+sh npm install
